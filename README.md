@@ -50,6 +50,7 @@ typedef int (*yaplth_filter_t)(MapsStruct *workMap, MemElfContext *workElf,
       我考虑过做互斥锁，也加了，但是懒得梳理流程了，加的不是很正确，欢迎修改更正。
       我考虑过多次Hook同一个函数，但是没完全解决，所以请当成只能Hook一次的工具吧（移除后可以重新Hook这个是没问题的）
       为了解决安卓N限制，我同样在写完elftool后实现了我自己的dlfcn_compat，提供属于我的解决方案，这里不过多介绍，请自行查看源码。
+      我没更新非对应句柄的PLT表，也就是说指谁谁PLT变，后续解决。
 
 ## license开源许可
      这个项目如果源码进行了修改需要公开，并且修改的项目（本项目部分）也需要遵从本协议。
