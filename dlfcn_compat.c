@@ -112,7 +112,7 @@ void *fake_dlopen_with_path(const char *libpath, int flags) {
     retry:;
     for (int i = 0; i < processMaps->size; i++) {
         MapsStruct *mitem = &processMaps->maps[i];
-        if (((mitem->permission & PROT_READ) && (mitem->shared == 1)) &&
+        if (((mitem->permission & PROT_READ) && (mitem->shared == 0)) &&
             strstr(mitem->path, libpath)) {
             handle = mitem->start;
             ctx = findMemElfContext(handle, 1, 1);
